@@ -1,0 +1,22 @@
+alerts:
+  - rule: DEPLOYMENT_FAILED
+features:
+  - enable-kata-build
+name: do-app-composedb
+region: nyc
+services:
+  - name: composedb
+    dockerfile_path: Dockerfile
+    envs:
+      - key: CERAMIC_EXPERIMENTAL_INDEX
+        scope: RUN_AND_BUILD_TIME
+        value: true
+    github:
+      branch: do-test
+      deploy_on_push: true
+      repo: doubtingben/do-app-composedb
+    http_port: 7007
+    instance_count: 1
+    instance_size_slug: professional-xs
+    routes:
+      - path: /
