@@ -10,12 +10,15 @@ services:
     envs:
       - key: CERAMIC_EXPERIMENTAL_INDEX
         scope: RUN_AND_BUILD_TIME
-        value: true
+        value: "true"
     github:
       branch: do-test
       deploy_on_push: true
       repo: doubtingben/do-app-composedb
     http_port: 7007
+    health_check:
+      initial_delay_seconds: 30
+      http_path: /api/v0/node/healthcheck
     instance_count: 1
     instance_size_slug: professional-xs
     routes:
