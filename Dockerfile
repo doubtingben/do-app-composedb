@@ -3,5 +3,4 @@ FROM ceramicnetwork/js-ceramic:${JS_CERAMIC_VERSION} as ceramic
 
 ARG COMPOSEDB_VERSION=0.2.0
 #RUN pnpm add -g @composedb/cli@0.2.0
-
-
+ADD daemon.config.json /root/.ceramic/daemon.config.json

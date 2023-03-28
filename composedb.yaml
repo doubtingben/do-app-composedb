@@ -5,11 +5,10 @@ features:
 name: do-app-composedb
 region: nyc
 services:
-  - name: composedb
+  - name: ceramic
     dockerfile_path: Dockerfile
     envs:
-      - key: CERAMIC_EXPERIMENTAL_INDEX
-        scope: RUN_AND_BUILD_TIME
+      - key: CERAMIC_INDEXING_DB_URI
         value: "true"
     github:
       branch: do-test
