@@ -23,3 +23,9 @@ services:
     instance_size_slug: professional-xs
     routes:
       - path: /
+databases:
+  - name: postgres
+    engine: PG
+    production: false
+    db_name: composedb
+    db_user: ceramic
