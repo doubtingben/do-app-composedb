@@ -23,6 +23,14 @@ services:
     instance_size_slug: professional-xs
     routes:
       - path: /
+  - name: ipfs
+    image: ceramicnetwork/go-ipfs-daemon
+    tag: prod
+    registry_type: DOCKER_HUB
+    instance_count: 1
+    http_port: 4001
+    internal_ports:
+      - 5001
 databases:
   - name: postgres
     engine: PG
