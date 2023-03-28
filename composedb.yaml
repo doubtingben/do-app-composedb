@@ -9,7 +9,7 @@ services:
     dockerfile_path: Dockerfile
     envs:
       - key: CERAMIC_INDEXING_DB_URI
-        value: "true"
+        value: ${_self.DATABASE_URL}
     github:
       branch: do-test
       deploy_on_push: true
